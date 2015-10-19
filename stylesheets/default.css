@@ -2,8 +2,8 @@ html {
   background-color: #ffffff;
 }
 .main-content {
-	width: 940px;
-	margin: 0 auto;
+	width: 1220px;
+	margin: 6px auto;
   border-width: 1px solid pink;
 }
 .top-bar {
@@ -17,9 +17,12 @@ html {
 }
 
 .full-name {
-  color:black;
+  color: #36648b;
   font-size: 40px;
   padding-top: 18px;
+  font-family: cursive;
+  font-weight: bold;
+  font-style: italic;
 }
 
 a{
@@ -41,4 +44,8 @@ a{
   display: inline-block;
   float: right;
   margin-top: 10px;
+}
+.image {
+  text-align: center;
+
 }
