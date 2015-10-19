@@ -1,0 +1,44 @@
+html {
+  background-color: #ffffff;
+}
+.main-content {
+	width: 940px;
+	margin: 0 auto;
+  border-width: 1px solid pink;
+}
+.top-bar {
+  padding-top: 10px;
+}
+.nav {
+  color: gray;
+  font-size: 18px;
+  text-align: right;
+  display: block;
+}
+
+.full-name {
+  color:black;
+  font-size: 40px;
+  padding-top: 18px;
+}
+
+a{
+  color: #567;
+}
+.contact {
+  float: right;
+  margin-top: 5px;
+  display: block;
+}
+
+.linkedin {
+  width: 30px;
+  height: 30px;
+}
+
+.right-nav
+{
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
