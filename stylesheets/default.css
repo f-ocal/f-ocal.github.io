@@ -3,7 +3,7 @@ html {
 }
 .main-content {
 	width: 1220px;
-	margin: 0 auto;
+	margin: 6px auto;
   border-width: 1px solid pink;
 }
 .top-bar {
