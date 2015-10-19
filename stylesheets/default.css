@@ -38,6 +38,14 @@ a{
   width: 30px;
   height: 30px;
 }
+.facebook {
+  width: 30px;
+  height: 30px;
+}
+.twitter {
+  width: 30px;
+  height: 30px;
+}
 
 .right-nav
 {
@@ -47,5 +55,9 @@ a{
 }
 .image {
   text-align: center;
-
+}
+.text {
+  font-family: cursive;
+  font-size: 25px;
+  text-align: center;
 }
