@@ -25,24 +25,36 @@
   </div>
 
   <div class="reflection">
-      <h2>Array and Hashes</h2>
-      <h3><strong style="color:red">Array</strong></h3>
-      <p>As Ruby is completely object-oriented, arrays and hashes are the containers object to hold the collection of objects.
-        An array's job is to store other objects including other arrays, hashes, classes, integers, strings and true and false .. any object.
-      </p>An array can be created in following ways:
-      <ol><li><strong>Array.new() method</strong></li>
-        <p>The method of new() is usual way, additionally it also can help to specify the size of the array.
-          While indicating the size of the array, the contents of the array can be can be set.
-          <br><code>a = Array.new() </code> ==> creates an empty array, the value returns to [].
-          <br><code>a = Array.new(3)</code> ==> allows you specify the size of the array to 3, all elements are set to nil
-          <br><code>a = Array.new(4, "hello") </code>==> also allows you to initialize its contents. All the elements of the array is "hello"
-        </p>
-        <li><strong>Literal Constructor []</strong></li>
-      </ol>
+    <h2>Array and Hashes</h2>
+    <h3><strong style="color:red">Array</strong></h3>
+    <p>As Ruby is completely object-oriented, arrays and hashes are the containers object to hold the collection of objects.
+      An array's job is to store other objects including other arrays, hashes, classes, integers, strings and true and false .. any object.
+    </p>An array can be created in following ways:
+    <ol>
+      <li><strong>Array.new() method</strong></li>
+        The method of new() is usual way, additionally it also can help to specify the size of the array.
+        While indicating the size of the array, the contents of the array can be can be set.
+        <div class="code-block"><code>a = Array.new() </code> ==> creates an empty array, the value returns to [].
+        <br><code>a = Array.new(3)</code> ==> allows you specify the size of the array to 3, all elements are set to nil
+        <br><code>a = Array.new(4, "hello") </code>==> also allows you to initialize its contents. All the elements of the array is "hello"
+      </div>
+      </p>
+      <li><strong>Literal Constructor</strong></li>Creating an array by using square brackets []
+      <div class="code-block"><code>a=[]</code> ==> creating an array with square brackets.
+      <br><code>a= [1,2,"three", "a", "b",[5,3,10]]</code> ==> you can also initialize the contents of the array within the brackets. You can nest another arrays within an array.
+    </div>
+    </ol>
+      Arrays in Ruby are the storage that holds ordered lists of objects. They are written a single row of variable length. Ruby allows you retrieve information from an array, you can modify or even insert data to an array.
+    You can access elements within the array by referencing the index numbers. The first element is positioned at "0", second element is at "1"... as per below example:
+    <div class="code-block">
+    <code>a= [1,2,"three", "a", "b",[5,3,10]]</code>
+    <br><code>a=[0]</code> ==> 1
+    <br><code>a=[2]</code> ==> "three"
+    </div>
 
-      <h3><strong style="color:red">Hashes</strong></h3>
+    <h3><strong style="color:red">Hashes</strong></h3>
 
 
 
-    </body>
-    </html>
+  </body>
+  </html>
