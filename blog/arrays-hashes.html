@@ -34,9 +34,9 @@
       <li><strong>Array.new() method</strong></li>
         The method of new() is usual way, additionally it also can help to specify the size of the array.
         While indicating the size of the array, the contents of the array can be can be set.
-        <div class="code-block"><code>a = Array.new() </code> ==> creates an empty array, the value returns to [].
-        <br><code>a = Array.new(3)</code> ==> allows you specify the size of the array to 3, all elements are set to nil
-        <br><code>a = Array.new(4, "hello") </code>==> also allows you to initialize its contents. All the elements of the array is "hello"
+        <div class="code-block"><code>a = Array.new() </code> ==> creates an empty array, return value will be [].
+        <br><code>a = Array.new(3)</code> ==> allows you specify the size of the array to 3, all of three elements are set to nil.
+        <br><code>a = Array.new(4, "hello") </code>==> also allows you to initialize its contents. All of four elements of the array will be assigned to "hello"
       </div>
       </p>
       <li><strong>Literal Constructor</strong></li>Creating an array by using square brackets []
@@ -55,7 +55,7 @@
   <ol>
     <li><strong>Hash.new() method </strong></li>Creating an empty hash
     <div class="code-block"><code>h = Hash.new() </code> ==> creates an empty hash! When you ask for the value for non-existing key, it returs `nil`.
-    <br><code>h = Hash.new(0)</code> ==></div>
+    <br><code>h = Hash.new(0)</code> ==> assigns hash default value to 0. When you call for a key that doesn't exist, it returns the default value of `0`.  </div>
 
     <br><li><strong>Literal Constructor { } </strong></li>Creating a hash by using curly braces { } ~very popular way~
       <div class="code-block"><code>h={}</code> ==> creating an empty hash.</div>
@@ -64,7 +64,7 @@
       <br><code>h.["New York", "NY", "San Francisco", "SF"]</code> ==> This will mapped to a key/value pairs as per following <br>
       <code>h = {"New York" => "NY", "San Francisco" => "SF"}</code> ==> This is also another way to create hashes by giving key and values!!!<br>
 
-    <br><li><strong>Defining keys with symbols </strong></li>Symbols are very strong
+    <br><li><strong>Defining keys with symbols </strong></li>Both following ways are quite similar to each other. You can either assign <strong>`key`</strong> after symbol <strong>`:`</strong> and followed by <strong>`=>`</strong> sign or you can assign <strong>`key`</strong> and follow with symbol <strong>`:`</strong>, and then assign them to <strong>`values`</strong> inside quotation marks.
     <br><code>h=[:new_york => "NY", :year => "2015"]</code> ==> This will generate a new hash by giving key/value pairs.
     <br><code>h=[new_york: "NY", year: "2015"]</code> ==> This is also another way to create hash by giving key/value pairs.
 
