@@ -2,7 +2,8 @@ html {
   background-color: #ffffff;
 }
 .main-content {
-	width: 1220px;
+	width: 70%;
+  margin-left: 5%;
 	margin: 6px auto;
   border-width: 1px solid pink;
 }
@@ -63,7 +64,7 @@ a{
 }
 li {
   /*font-family: cursive;*/
-  color: #9999ff;
+  /*color: #9999ff;*/
   font-size: 25px;
   font-weight: bold;
 }
@@ -97,7 +98,33 @@ textarea {
   height: 200px;
   width: 400px;
 }
-.code-block
+.code-intent
 {
   margin-left: 30px;
+}
+code
+{
+  font-size: 15px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  white-space: pre;
+  padding: 2px 2px;
+  border-radius: 3px;
+}
+.code-block {
+  display: block;
+  width: 420px;
+  height: 80px;
+  padding:20px 8px 8px 8px;
+  margin: 15px;
+  margin-left: 25px;
+  border:1px solid #ddd;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  font-family: Monaco;
+  font-size: 14px;
+  color:#666;
+  white-space: pre;
+  overflow: auto;
 }

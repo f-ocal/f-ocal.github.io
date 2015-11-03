@@ -25,11 +25,37 @@
   </div>
 
   <div class="reflection">
-    <h2>Enumerable and Enumerator</h2>
-    <h3><strong style="color:red">Enumerable#map</strong></h3>
-    <p>Enumerable can be your best friend in Ruby!! As enumerables provides methods that allows you to transform, manipulate and sort the collection of data.
+    <h2>Enumerable</h2>
+    <h3><strong style="color:red"></strong></h3>
+    <h4>Enumerable is your best friend in Ruby!!</h4>
+    <p>Enumerables provides methods that allows you to transform, manipulate and sort the collection of data. <code>Enumerable</code> is actually a "module", means that it is a bunch of methods packaged together that can be included with other classes (like Array and hash) Programmers don't have to write all those methods many different times, they just write them once, package them as <code>Enumerable</code>, tell <code>Array</code> and <code>Hash</code> to include them!!!
+    </p>
+    <p>
+    When you are building any programs and websites, Enumerable gives you lots of opportunity of doing something like executing code block to every element of a collection object. Enumeration means that the range is treated as a traversable collection of individual items. </p>
+    <img src="../imgs/enumerables.jpg" style="display: block; margin: 0 auto"><br><br>Let's say we stored information about these jeans in the following data structure: <br>
+    <div class="code-block">jeans = [{ color: "sky_blue", price:"$15.99" },
+          { color:"navy_blue", price:"$15.99" },
+          { color:"blue", price:"$15.99" },
+          { color:"navy_blue", price:"$15.99" }]</div>
+    <p>We can run code and iterate through each element of the array(each pair of jeans) with method <code>.map</code> . We want to modify the jeans by keeping all of them, once we modify them, we'd like to display the results. map is invoked by a collection and accepts a block of code that acts upon each element in that collection. So,  <strong> .map </strong> will run your block of code and give you an object filled with whatever your block returned each time.
+    <div class="code-block" style="width:600px">jeans.map {|(key, value)| puts #{key} if color == navy_blue}</div>
 
-    Enumeration: the range is treated as a traversable collection of individual items</p>
+    <div>Enumerable Iterators Summary</div>
+
+    <code>.each</code>
+    <br><code>.each_of_object</code>
+    <br><code>.select</code> returns a new object (e.g. array) filled with only those original items where the block you gave it returned `true`
+    <br><code>.map</code> returns a new array filled with whatever gets returned by the block each time it runs.
+    <br><code>.collect</code>
+    <br><code>.scan</code>
+    <br><code>.slice</code>
+    <br><code>.inject</code>
+    <br><code>.group_by?</code>
+    <br><code>.include?()</code>
+    <br><code>.is_a?</code>
+    <br><code>.all?</code>
+    <br><code>.any?</code>
+    </p>
 
 
 
