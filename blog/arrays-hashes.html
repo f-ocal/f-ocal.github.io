@@ -34,18 +34,18 @@
       <li><strong>Array.new() method</strong></li>
         The method of new() is usual way, additionally it also can help to specify the size of the array.
         While indicating the size of the array, the contents of the array can be can be set.
-        <div class="code-block"><code>a = Array.new() </code> ==> creates an empty array, return value will be [].
+        <div class="code-intent"><code>a = Array.new() </code> ==> creates an empty array, return value will be [].
         <br><code>a = Array.new(3)</code> ==> allows you specify the size of the array to 3, all of three elements are set to nil.
-        <br><code>a = Array.new(4, "hello") </code>==> also allows you to initialize its contents. All of four elements of the array will be assigned to "hello"
+        <br><code>a = Array.new(4, "hello")</code>==> also allows you to initialize its contents. All of four elements of the array will be assigned to "hello"
       </div>
       </p>
       <li><strong>Literal Constructor</strong></li>Creating an array by using square brackets []
-      <div class="code-block"><code>a=[]</code> ==> creating an array with square brackets.
+      <div class="code-intent"><code>a=[]</code> ==> creating an array with square brackets.
       <br><code>a= [1,2,"three", "a", "b",[5,3,10]]</code> ==> you can also initialize the contents of the array within the brackets. You can nest another arrays within an array.
     </div>
     </ol>
     To access the elements of the array by referencing index numbers. The first element is positioned at "0", second element is at "1".. such as
-    <div class="code-block">
+    <div class="code-intent">
     <code>a= [1,2,"three", "a", "b",[5,3,10]]</code>
     <br><code>a=[2]</code> ==> "three" and <code>a=[5]</code> ==> [5,3,10]</div>
 
@@ -54,11 +54,11 @@
   </p>Hashes can be created in following ways:
   <ol>
     <li><strong>Hash.new() method </strong></li>Creating an empty hash
-    <div class="code-block"><code>h = Hash.new() </code> ==> creates an empty hash! When you ask for the value for non-existing key, it returs `nil`.
+    <div class="code-intent"><code>h = Hash.new() </code> ==> creates an empty hash! When you ask for the value for non-existing key, it returs `nil`.
     <br><code>h = Hash.new(0)</code> ==> assigns hash default value to 0. When you call for a key that doesn't exist, it returns the default value of `0`.  </div>
 
     <br><li><strong>Literal Constructor { } </strong></li>Creating a hash by using curly braces { } ~very popular way~
-      <div class="code-block"><code>h={}</code> ==> creating an empty hash.</div>
+      <div class="code-intent"><code>h={}</code> ==> creating an empty hash.</div>
 
     <br><li><strong>The Hash.[] and h = { "key" => "value"}</strong></li>Creating a hash by using square brackets, this method takes comma-separated list of items. !!!
       <br><code>h.["New York", "NY", "San Francisco", "SF"]</code> ==> This will mapped to a key/value pairs as per following <br>
