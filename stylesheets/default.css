@@ -112,10 +112,10 @@ code
   border-radius: 3px;
 }
 .code-block {
-  display: block;
-  width: 420px;
-  height: 80px;
-  padding:20px 8px 8px 8px;
+  /*display: block;*/
+  width: 500px;
+  height: 100px;
+  /*padding:20px 8px 8px 8px;*/
   margin: 15px;
   margin-left: 25px;
   border:1px solid #ddd;
