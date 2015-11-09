@@ -1,3 +1,3 @@
-# f-ocal.github.io
+Hello everyone,
 
-This is my website for phase-0.
+This is my website for Dev Bootcamp.
