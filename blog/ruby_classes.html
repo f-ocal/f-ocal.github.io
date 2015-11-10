@@ -28,9 +28,16 @@
   <div class="reflection">
     <h2>Ruby - Classes </h2>
     <h3><strong style="color:red"></strong></h3>
-    <!-- <p>Enumerables provides methods that allows you to transform, manipulate and sort the collection of data. <code>Enumerable</code> is actually a "module", means that it is a bunch of methods packaged together that can be included with other classes (like Array and hash) Programmers don't have to write all those methods many different times, they just write them once, package them as <code>Enumerable</code>, tell <code>Array</code> and <code>Hash</code> to include them!!! -->
-    <p>
-      Ruby
+    <p>Ruby is an object oriented programming language which involves class and objects. Objects are the key to understand object-oriented technology. If you look around, you will see a lot of examples of real-world objects such as your dog, or your bike etc. Real-world objects hare two characteristics: state and behavior. Dog has state (name, color, hungry) and behavior (barking). Bike also have state (currect pedal, current gear) and behavior (changing gear). Identifying state and behavior for real-worl objects is great way to begin thinking about objects in programming. Software objects are conceptually similar to real-world objects; they also consists of state and behavior. An object stores its state in fields called variables(local, instance and global) and exposes its behavior through methods (functions). Methods operate on an object's state and serve as the primary mechanism for object-to-object communication or functions.
+    </p>Let's make sure that we understand the differences between local and instance variables!<br>
+    <p>To store any data or string in computer's memory for use later, you need to give the string a name, programmers call this name variable. Local variables begin with a lowercase letter or _ . Local variable declared within subroutines or programming blocks. Their local scope means they can only be used within the subroutine or program block they are declared in. Local variables have limited scope, which means they are declared when a function or subroutine is called, and once the function ends, the memory take up by the variable is released. (this is not the case for global variables).</p>
+    <p>Instance variables is bound to the specific instance of the class. An instance variable makes itself available to every method of the object by binding itself to the entire object. Whenever you have class, instance variables are bound to an instance of a class, what we call it, state of an object. When you want to define the state of an object and use it anywhere within the class, we use instance variables. An instance variables starts with an '@' sign. You can get and set these instance variables by creating functions.
     </p>
+    <p>Class is a blueprint for an object which holds the methods and behaviours in it. You can define multiple methods within a class. When a new class is created, an object of type Class is initialized and assigned to a global constant. When <code>object = ClassName.new </code> is called, a new object is created, which is the instance of this class.To implement object oriented programming in Ruby, we need to first learn how to create objects and classes</p>
+    A class can be defined as:<br>
+    <img src="../imgs/defining_class.jpg">
+    <p>An object can be created as:<br>
+    <img src="../imgs/object.jpg"></p>
+    <p>
   </body>
   </html>
