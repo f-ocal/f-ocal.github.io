@@ -28,9 +28,82 @@
   <div class="reflection">
     <h2>Ruby - Classes </h2>
     <h3><strong style="color:red"></strong></h3>
-    <!-- <p>Enumerables provides methods that allows you to transform, manipulate and sort the collection of data. <code>Enumerable</code> is actually a "module", means that it is a bunch of methods packaged together that can be included with other classes (like Array and hash) Programmers don't have to write all those methods many different times, they just write them once, package them as <code>Enumerable</code>, tell <code>Array</code> and <code>Hash</code> to include them!!! -->
-    <p>
-      Ruby
+    <p>Ruby is an object oriented programming language which involves class and objects. Objects are the key to understand object-oriented technology. If you look around, you will see a lot of examples of real-world objects such as your dog, or your bike etc. Real-world objects hare two characteristics: state and behavior. Dog has state (name, color, hungry) and behavior (barking). Bike also have state (currect pedal, current gear) and behavior (changing gear). Identifying state and behavior for real-worl objects is great way to begin thinking about objects in programming. Software objects are conceptually similar to real-world objects; they also consists of state and behavior. An object stores its state in fields called variables(local, instance and global) and exposes its behavior through methods (functions). Methods operate on an object's state and serve as the primary mechanism for object-to-object communication or functions.
+    </p>Let's make sure that we understand the differences between local and instance variables!<br>
+    <p>To store any data or string in computer's memory for use later, you need to give the string a name, programmers call this name variable.
+    <p><code>Local variables</code> begin with a lowercase letter or _ . Local variable declared within subroutines or programming blocks. Their local scope means they can only be used within the subroutine or program block they are declared in. Local variables have limited scope, which means they are declared when a function or subroutine is called, and once the function ends, the memory take up by the variable is released. (this is not the case for global variables).</p>
+    <p><code>Instance variables</code> is bound to the specific instance of the class. An instance variable makes itself available to every method of the object by binding itself to the entire object. Whenever you have class, instance variables are bound to an instance of a class, what we call it, state of an object. When you want to define the state of an object and use it anywhere within the class, we use instance variables. An instance variables starts with an '@' sign. You can get and set these instance variables by creating functions.
     </p>
+    <p><code>Class</code> is a blueprint for an object which holds the methods and behaviours in it. You can define multiple methods within a class. When a new class is created, an object of type Class is initialized and assigned to a global constant. When <code>object = ClassName.new </code> is called, a new object is created, which is the instance of this class.</p>
+
+    Let's create a class called Plant as per below:
+
+    <p><div class="code-block" style="height: 870px; width: 800px">
+          class Plant
+
+            @@tallest_plant = nil
+
+            def initialize(name, height)
+              @name = name
+              @height = height
+              save_tallest
+            end
+
+            def height
+              @height
+            end
+
+            def inspect
+              "#{@height}-inch-tall #{@name}"
+            end
+
+            def grow(inches)
+              @height +=inches
+              save_tallest
+            end
+
+            def self.tallest
+              @@tallest_plant
+            end
+
+            private
+
+            def save_tallest
+              if @@tallest_plant.nil? || @height > @@tallest_plant.height
+                @@tallest_plant = self
+              end
+            end
+          end
+
+          rose = Plant.new('rose', 5)
+          p Plant.tallest
+          tulip = Plant.new('tulip', 6)
+          p Plant.tallest
+          rose.grow(2)
+          p Plant.tallest
+    </div></p>
+    Let's analyse the code here. To implement object oriented programming in Ruby, we need to first learn how to create objects and classes.
+
+    <p>A class can be defined as:<br>
+    <img src="../imgs/defining_class.jpg">
+
+    <p>An object can be created as:<br>
+    <img src="../imgs/object.jpg"></p>
+
+    <p>Now, we are initializing the instance variables, <code>@name</code> and <code>@height</code> as:<br>
+    <img src="../imgs/instance_variable.png"></p>
+
+    <p>What if we want to include some properties? Let's create some methods to see what inches our rose and tulib have? Then, we need to define instance methods as:<br>
+    <img src="../imgs/instance_methods.jpg"></p>
+
+    <p>Ok, that's looking pretty cool. We now know how tall our flowers. Of course, our flowers grow as time passes just as every flowers. Shall we see what we can create a method to grow our flowers?<br>
+    <img src="../imgs/grow.jpg"></p>
+
+    <p>After we grew our plant, we now want to find out which plant is the tallest. Therefore, we create global instance of <code>@@tallest_plant</code>and global method of <code>self.tallest</code>. We also make save.tallest private method because we don't want anyone to access and change it.<br>
+    <img src="../imgs/tallest.jpg"></p>
+
+    <p>Great!! Are you excited what will be the output? Let's see,<br>
+    <img src="../imgs/output.jpg"></p>
+    <p>After our flowers grow 2-inches, our program finds out which flower is the tallest.You can do many programs with classess like generating passwords, checking credit cards more. Got an idea what you want to built with classess so happy coding!!!</p>
   </body>
   </html>
