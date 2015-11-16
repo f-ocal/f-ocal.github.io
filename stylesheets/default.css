@@ -79,7 +79,9 @@ li {
   padding-top: 200px;
 }
 .my-blogs {
-  font-size: 18px;
+  width: 70%;
+  padding-top: 100px;
+  font-size: 16px;
   font-family: fantasy;
 }
 
@@ -127,4 +129,10 @@ code
   color:#666;
   white-space: pre;
   overflow: auto;
+}
+
+time {
+  font-size: 20px;
+
+  color: #aaa;
 }
