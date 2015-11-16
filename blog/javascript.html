@@ -28,6 +28,51 @@
 
   <div class="reflection">
     <h2>Javascript </h2>
+    <p>
+      Have you ever been involved in the planing house construction? What goes in it to contruct the walls? As you may know, it requires bricks, paint and even stack of bricks if you want to make complex.
+      In coding, all programming languages are similar with objects, functions or methods how it should be constructed. We build data structures from bricks of numbers, Booleans and strings but you can't make a house from a single brick so objects allow us to group values -including other objects- thus build more complex structures.
+    </p>
+
+    <p>Let's crack the values and look at each of them in both JavaScript and Ruby.<br><br>
+      Values in Javascript is the chunk of the bits that were separated and each represent pieces of information. There are six basic types of values in JavaScript: numbers, strings, Booleans, objects, functions, and undefined values.
+      <ol>
+        <li>Numbers</li> They are the numerical values, writen such as 10. Numbers vary from whole number, integer or frctional numbers, float. There are 3 special numbers in Javascript which are Infinity, -Infinity, and Infinity-1. In Ruby, I have seen only Infinity which results when you divide any number with `0`.
+        <li>Strings</li>They are the basic data types that represents the text.They are written between quotes in both Ruby and Javascript.When you want to find out what kind of class type is the string, we find out by <code>"String".class</code> = > in Ruby; however in Javascript we use `typeof` <code>console.log(typeof "String")</code> which will results <code>>string</code>
+        <br>While we are writing strings, whenever a backslash(\) is found inside quoted text, it indicates that the character after it has a special meaning, which is called escaping the character. When 'n' character comes after backslash, it interpretes as new line <code>\n</code>which is also the same in Ruby. Besides `\n`, Javascript has the same <code>+</code> operator that concatenates two strings.
+        <li>Booleans</li> are the true and false values which distinguishes two possibilities like `on` or `off`. Boolean values are the same for both in Ruby and Javascript.
+        <li>Objects</li>Objects and their associated methods are both included in both Ruby and Javascript, which leads that both are object oriented. A prototype in Javascript is much like a Class in Ruby such as:
+              <div class="code-block" style="height: 150px; width: 600px">
+                function Cat(name, age) {
+                  this.name = name;
+                  this.meow = function() {
+                    console.log("My name is" +this.name+!) };
+                  }
+                  var cuteCat = new Cat("Sandy", "5");
+              </div>
+        The cuteCat object is considered a new instance of the Cat prototype. Prototype is essentially the same as Class in Ruby. Note that this in JavaScript is the same concept as self in Ruby.
+        <li>Functions</li>
+        Function is a piece of program that wrapped in a value. Whenever we want to run wrapped program, we can apply functions to variables. You can call a function by putting parentheses after an expression which produces function value. You will directly use the name of the variable that holds the function. The values(these could be strings) between the parentheses are given to the program inside the function. Shortly, functions are the butter and heart of the JavaScript programming.For instance,.each method is commonly used in Ruby to iterate through an array. Javascript has each function does the same thing but the syntax is different. Ruby has some methods e.g. .each, .map written as <code>array.each {|element| block }</code> whereas Javascript .each method is very different syntax such as <code>array.forEach(function(n)) { console.log(n); }</code>.<br><br>
+        Ruby Methods
+        <div class="code-block" style="height: 170px; width: 700px">
+          def plusFive(num = 0)
+            num + 5
+          end
+          plusFive(10) # This returns to 15
+
+          [5, 10, 15].map { |k| plusFive(k) }  // This returns to [10, 15, 20]
+        </div>
+
+        Javascript Functions
+        <div class="code-block" style="height: 170px; width: 700px">
+          function plusFive(num) {
+            return (num || 0) + 5;
+          }
+          plusFive();     //This returns to 5
+          plusFive(10);   //This returns to 15
+
+          [5, 10, 15].map(plusFive);  // This returns to [10, 15, 20]
+        </div>
+        </ol>
 
   </body>
   </html>
