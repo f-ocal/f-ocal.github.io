@@ -3,10 +3,18 @@ html {
 }
 .main-content {
 	width: 70%;
+  display: block;
   margin-left: 5%;
 	margin: 6px auto;
   border-width: 1px solid pink;
 }
+
+.table-block {
+  width: 95%;
+	margin: 5px auto;
+  border-width: 1px solid gray;
+}
+
 .top-bar {
   padding-top: 10px;
 }
@@ -118,8 +126,8 @@ code
   width: 500px;
   height: 100px;
   /*padding:20px 8px 8px 8px;*/
-  margin: 15px;
-  margin-left: 25px;
+  margin: 5px;
+  /*margin-left: 15px;*/
   border:1px solid #ddd;
   border-bottom-width: 2px;
   border-radius: 4px;
@@ -133,6 +141,5 @@ code
 
 time {
   font-size: 20px;
-
   color: #aaa;
 }

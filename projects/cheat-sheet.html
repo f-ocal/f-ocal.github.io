@@ -28,29 +28,140 @@
 
   <div class="reflection">
     <h2>What will be the perfect topic for a cheat sheet? Of course, Enumerables :) </h2>
-    <code>each_with_index</code>
-    <div class="code-block" style="width: 500px ; height: 140px">
-      my_hash = Hash.new
-      %w(cat, dog, bird).each_index {|item, index|
-        hash[item] = index
-      }
-      > my_hash #=> { "cat"=> 0, "dog"=> 1, "bird" => 2 }
-    </div>
-    <p>
-      <img src="./wireframe2.jpg" style="display: block; margin: 0 auto" width="100%"><br>
-    </p>
+  </div>
+
+  <div class="table-block">
+  <table>
+    <tr>
+      <td>
+        <code>each_with_index</code></td>
+        <td>
+          <code>each_slice(n)</code></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="code-block" style="width: 480px; height: 155px; margin-left: 0;">
+    my_hash = Hash.new
+    %w(cat, dog, bird).each_index do |item, index|
+      hash[item] = index
+    end
+
+    > my_hash #=> { "cat"=> 0, "dog"=> 1, "bird" => 2 }
+            </div>
+          </td>
+          <td><div class="code-block" style="width: 480px; height: 155px; margin-left: 0;">
+  (1..10).each_slice(3) { |number| p number }<br>
+  # [ 1, 2, 3 ]
+    [ 4, 5, 6 ]
+    [ 7, 8, 9 ]
+    [ 10 ]
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br><code>partition</code></td>
+          <td>
+            <br><code>inject</code></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="code-block" style="width: 480px; height: 95px; margin-left: 0;">
+    (1..6).partition { |i| (i&1).zero? }
+    #[true_array, false_array]
+    # [[2,4,6], [1,3,5]]
+              </div>
+            </td>
+            <td><div class="code-block" style="width: 480px; height: 95px; margin-left: 0;">
+    (5..10).inject {|sum, number| sum +number }
+    #=> summing all elements.
+    #=> 45
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br><code>scan</code></td>
+            <td>
+              <br><code>reduce</code></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="code-block" style="width: 480px; height: 95px; margin-left: 0;">
+    a = 123456
+    # a.to_s.scan(/...|\d+$/) # ["123", "456"]
+    # /...|\d+$/ scan every 3 digits until the end.
+                </div>
+              </td>
+              <td><div class="code-block" style="width: 480px; height: 95px; margin-left: 0;">
+    (5..10).reduce(1, :*)
+    #=> multiplying all elements (inject is an alias)
+    #=> 151,200
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <br><code>group_by</code></td>
+              <td>
+                <br><code>any? all? none? find?</code></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="code-block" style="width: 600px; height: 305  px; margin-left: 0;">
+  marks = {"Kate":23, "Louise":40, "James":88, "Kayla":60}
+
+  def group_by_marks(marks, number)
+    marks.group_by { |key, value| value < number? "Failed":"Passed" }
+  end
+  > group_by_marks(marks, 30)
+  #=> { "Failed"=>[[:Kate, 23]],
+        "Passed"=>[[:Louise, 40],
+                   [:James, 88],
+                   [:Kayla, 60]] } (returns in hash)
+
+  > (1..5).group_by {|number| number % 2 }
+
+  #=> { 1=>[1,3,5], 0=>[2, 4] }
+                  </div>
+                </td>
+                <td><div class="code-block" style="width: 530px; height: 305px; margin-left: 0;">
+    > hash = {"a" => 1, "b" => 2, "c" => 3}
+    > hash.any? { |key, value| value.is_a? String }
+    # checks if any value of hashis of the type String
+    #=> False
+
+    > hash.all? {|key, value| key.is_a? String }
+    # checks if all keys of hashare of the type String
+    #=> True
+
+    > hash.none? {|key, value| value < 3}
+    # checks if all values of hashare less than 3
+    #=> False
+    > hash.find? {|key, value| key == "b"} # returns an Array
+    => ["b" , 2]
+                </div>
+              </td>
+            </tr>
+        </table>
+  </div>
+
+      <p><h4>This the wireframe of the cheat sheet.</h4>
+        <img src="./wireframe2.jpg" style="display: block; margin: 0 auto" width="100%"><br>
+      </p>
   </body>
-  </html>
+</html>
 
-  <!--
+    <!--
 
-  REFLECTIONS
-  What content was solidified in the process of completing this challenge?
+    REFLECTIONS
+    What content was solidified in the process of completing this challenge?
 
-  What content do you feel a bit fuzzy on still?
+    What content do you feel a bit fuzzy on still?
 
-  What was the most difficult part of this challenge?
+    What was the most difficult part of this challenge?
 
-  Has your ability to add CSS to format and position objects improved since week 3?
+    Has your ability to add CSS to format and position objects improved since week 3?
 
--->
+  -->
