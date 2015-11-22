@@ -26,16 +26,31 @@
     </div>
   </div>
 
-  <div class="my-blogs">
-
-    <h1>My Projects </h1>
-    <li><a href="http://f-ocal.github.io/projects/cheat-sheet.html">Cheat Sheet - Enumarables</a> | <time datetime="2015-11-15T24:00:00-05:00">November 20, 2015</time>
-    </li>
-    <li><a href="#">Project 2 </a>
-    </li>
-    <li><a href="#">Project 3 </a>
-    </li>
-    </ul>
-  </div>
+  <div class="reflection">
+    <h2>What will be the perfect topic for a cheat sheet? Of course, Enumerables :) </h2>
+    <code>each_with_index</code>
+    <div class="code-block" style="width: 500px ; height: 140px">
+      my_hash = Hash.new
+      %w(cat, dog, bird).each_index {|item, index|
+        hash[item] = index
+      }
+      > my_hash #=> { "cat"=> 0, "dog"=> 1, "bird" => 2 }
+    </div>
+    <p>
+      <img src="./wireframe2.jpg" style="display: block; margin: 0 auto" width="100%"><br>
+    </p>
   </body>
   </html>
+
+  <!--
+
+  REFLECTIONS
+  What content was solidified in the process of completing this challenge?
+
+  What content do you feel a bit fuzzy on still?
+
+  What was the most difficult part of this challenge?
+
+  Has your ability to add CSS to format and position objects improved since week 3?
+
+-->
