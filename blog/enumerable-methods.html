@@ -35,11 +35,12 @@
     <p>
     When you are building any programs and websites, Enumerable gives you lots of opportunity of doing something like executing code block to every element of a collection object. Enumeration means that the range is treated as a traversable collection of individual items. </p>
     <img src="../imgs/enumerables.jpg" style="display: block; margin: 0 auto"><br><br>Let's say we stored information about these jeans in the following data structure: <br>
-    <div class="code-block">
+    <div class="code-block"style="height: 120px">
       jeans = [ { color: "sky_blue", price:"$15.99" },
                 { color:"navy_blue", price:"$15.99" },
                 { color:"blue", price:"$15.99" },
-                { color:"navy_blue", price:"$15.99" } ]</div>
+                { color:"navy_blue", price:"$15.99" } ]
+    </div>
     <p>We can run code and iterate through each element of the array(each pair of jeans) with method <code>.map</code> . We want to modify the jeans by keeping all of them, once we modify them, we'd like to display the results. map is invoked by a collection and accepts a block of code that acts upon each element in that collection. So,  <strong> .map </strong> will run your block of code and give you an object filled with whatever your block returned each time. <code>.collect</code> is the same as <code>.map</code>. Please see some of the famous enumerable methods and their return results as following:
     <div class="code-block" style="width:70% ; height: 270px">
       >jeans<strong>.map</strong> {|hash|  hash[:color] == 'navy_blue'}
@@ -50,7 +51,8 @@
       => [{:color=>"sky_blue", :price=>"$15.99"}, {:color=>"navy_blue", :price=>"$15.99"},
           {:color=>"blue", :price=>"$15.99"},{:color=>"navy_blue", :price=>"$15.99"}]<br>
       > jeans<strong>.collect</strong> {|hash|  hash[:color] == 'navy_blue'}
-      => [false, true, false, true]</div>
+      => [false, true, false, true]
+    </div>
 
 
     <strong><h4>Enumerable Iterators</h4></strong>

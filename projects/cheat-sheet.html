@@ -28,29 +28,58 @@
 
   <div class="reflection">
     <h2>What will be the perfect topic for a cheat sheet? Of course, Enumerables :) </h2>
-    <code>each_with_index</code>
-    <div class="code-block" style="width: 500px ; height: 140px">
-      my_hash = Hash.new
-      %w(cat, dog, bird).each_index {|item, index|
-        hash[item] = index
-      }
-      > my_hash #=> { "cat"=> 0, "dog"=> 1, "bird" => 2 }
-    </div>
-    <p>
-      <img src="./wireframe2.jpg" style="display: block; margin: 0 auto" width="100%"><br>
-    </p>
-  </body>
-  </html>
+  </div>
 
-  <!--
+  <table style="width:90%">
+    <tr>
+      <td>
+        <code>each_with_index</code></td>
+        <td>
+          <code>each_slice(n)</code></td>
+        </tr>
 
-  REFLECTIONS
-  What content was solidified in the process of completing this challenge?
 
-  What content do you feel a bit fuzzy on still?
 
-  What was the most difficult part of this challenge?
+        <tr>
+          <td>
+            <div class="code-block" style="width: 470px; height: 155px; margin-left: 0;">
+  my_hash = Hash.new
+  %w(cat, dog, bird).each_index do |item, index|
+    hash[item] = index
+  end
+  
+  > my_hash #=> { "cat"=> 0, "dog"=> 1, "bird" => 2 }
+            </div>
+          </td>
+          <td><div class="code-block" style="width: 470px; height: 155px; margin-left: 0;"><br> (1..10).each_slice(3) { |number| p number }<br>
+  # [ 1, 2, 3 ]
+    [ 4, 5, 6 ]
+    [ 7, 8, 9 ]
+    [ 10 ]
+          </div>
+          </td>
+        </tr>
 
-  Has your ability to add CSS to format and position objects improved since week 3?
 
--->
+
+
+
+      </table>
+      <p>
+        <img src="./wireframe2.jpg" style="display: block; margin: 0 auto" width="100%"><br>
+      </p>
+    </body>
+    </html>
+
+    <!--
+
+    REFLECTIONS
+    What content was solidified in the process of completing this challenge?
+
+    What content do you feel a bit fuzzy on still?
+
+    What was the most difficult part of this challenge?
+
+    Has your ability to add CSS to format and position objects improved since week 3?
+
+  -->
