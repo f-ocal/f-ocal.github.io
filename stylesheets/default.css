@@ -14,7 +14,23 @@ html {
 	margin: 5px auto;
   border-width: 1px solid gray;
 }
-
+/*.new-paragraph {
+  color: black;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Consolas;
+}
+.paragraph {
+  font-size: 20px;
+}*/
+.code-install {
+  overflow: auto;
+  background-color: #f7f7f7;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Consolas;
+}
 .top-bar {
   padding-top: 10px;
 }
@@ -93,7 +109,7 @@ li {
   font-family: fantasy;
 }
 
-ol li {
+.types {
   color: black;
   text-decoration: underline;
   display: block;
