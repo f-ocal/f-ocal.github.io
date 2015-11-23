@@ -105,12 +105,133 @@
       <span class="types"><strong>Cucumber</strong></span style="font-size: 25px">Cucumber supports Behaviour-Driven Development(BDD) , and enables using features and scenarios written in any language. It becomes available in project upon installing and activating the <code>cucumber</code> gem.
       </p>
       <p>
-      <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec is very popular and Behaviour-Driven Development testing framework for Ruby. RSpec stands for Ruby Spec. RSpec provides the structure for writing executable examples of how your code should behave means rspec describes your application's behaviour. To install rspec, type <span class="code-install"> $gem install rspec </span>
+      <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec is the most frequently used and very popular testing library for Ruby. It is Behaviour-Driven Development(BDD) testing framework, which is the concept built on the top of TDD(Test-Driven Development). RSpec stands for Ruby Spec. The idea is to write tests as specifications of system behaviour. RSpec provides the structure for writing executable examples of how your code should behave which means that the rspec describes your application's behaviour. It is very different way of approaching to the same challenge. TDD leads us to think more clearly and write tests that are easier to understand and maintain. This will help us write better and concise implementation code. General guidelines for TDD are:
+        <br> - Write the smallest possible test case that matches what we need to write code
+        <br> - Run the test and watch it fail.
+        <br> - Write some code with aim of making the test pass
+        <br> - Run the test and watch it fail.
+        <br> To install rspec, type <span class="code-install"> $gem install rspec </span>
       You can create project of files with extension of <code>.rb</code>.
       <p>
-      Let's create <code>book.rb</code> file which is for writing our code and <code>book_spec.rb</code> to write our tests to test our code. With RSpec, we are always <em>describing</em> the behavior of classess, modules and their methods. The <span class="code-install">describe block</span> is always used at the top to put the spec in a concept. When RSpec uses <code>"describe"</code> word, so we can express concept like a conversation: <div class="code-install">"Describe an order".<br>"It sums the prices of its line items."<br></div>
+      Let's create <code>book.rb</code> file which is for writing our code and <code>book_spec.rb</code> to write our tests to test our code. With RSpec, we are always <em>describing</em> the behavior of classess, modules and their methods. The <span class="code-install">describe block</span> is always used at the top to put the spec in a concept. When RSpec uses <code>"describe"</code>  and <code>"it"</code> words, so we can express concept like a conversation: <div class="code-install">"Describe an order".<br>"It sums the prices of its line items."</div>
+    </p>
+      We will start writing following code into our rspec <code><strong>book_spec.rb</strong></code> file:
+      <div class="code-install">
+        require_relative 'book.rb'<br>
+        describe Book do<br>
+        <em>#body goes here.
+        <br></em>
+        end
+      </div>
+      When we run <code><strong>#rspec book_spec.rb</strong></code> in the terminal, we will receive following test failure
+      <div class="code-install"># uninitialized constant Book (NameError) error.</div>That's expected, as we haven't created that class yet. Therefore, we should declare a class of <code><strong>Book</strong></code>in <code>book.rb</code><div class="code-install">
+        class Book
+        <br><em>#body goes here.</em>
+        <br>
+        end
+      </div>Running your RSpec now the test passess. That means we are now ready to add further test in our RSpec file. You could think of each case that the test might fail, we will write test for that case. Whenever you write the test, the test fails and you should write the simpliest code to make the test passed. Here, we have our code and test that have been written by Test-Driven Development format in the following:
       </p>
+      <table>
+        <tr>
+          <td style="width:90%">
+            <div class="code-block" style="height: 860px; width: 500px">
+      # File: book.rb
 
+      <span style="color: blue">class</span> Book
+
+       attr_accessor :author, :category
+
+       def initialize title, author, category
+         @title = title
+         @author = author
+         @category = category
+         @books = []
+       end
+
+       def title
+         @title
+       end
+
+       def title= new_title
+         @title= new_title
+       end
+
+       def get_book(title)
+         @books.select do |book|
+           book.title == title
+         end.first
+       end
+
+       def add_book(book)
+         @books.push(book)
+       end
+
+     <span style="color: blue">end</span>
+
+     <div class="code-install">
+    > rspec book_spec.rb<br>
+    ......
+    Finished in 0.00288 seconds.
+    6 examples, 0 failures
+     </div>
+          </div>
+          </td>
+
+          <td style="width:90%;">
+            <div class="code-block" style="height: 860px; width: 800px">
+      # File: book_spec.rb
+
+      require_relative 'book.rb'
+
+      describe Book <span style="color: blue">do</span>
+
+          before :each <span style="color: blue">do</span>
+            @book = Book.new "Title", "Author", :category
+          <span style="color: blue">end</span>
+
+          describe <span style="color:red">"#new"</span><span style="color:blue"> do </span>
+              it <span style="color:red">"returns a new book object"</span><span style="color: blue">do</span>
+                @book.should(be_an_instance_of(Book))
+              <span style="color: blue">end</span>
+
+              it <span style="color:red">"throws an ArgumentError when given fewer than 3 parameters"</span><span style="color: blue"> do</span>
+                lambda {Book.new "Title", "Author"}.should raise_exception(ArgumentError)
+              <span style="color: blue">end</span>
+          <span style="color: blue">end</span>
+
+          describe <span style="color:red">"#title"</span><span style="color:blue"> do </span>
+              it <span style="color:red">"returns the correct title"</span><span style="color: blue"> do</span>
+                @book.title.should eql "Title"
+              <span style="color: blue">end</span>
+          <span style="color: blue">end</span>
+
+          describe <span style="color:red">"#author"</span><span style="color:blue"> do </span>
+              it <span style="color:red">"returns the correct author"</span><span style="color: blue"> do</span>
+                @book.author.should eql "Author"
+              <span style="color: blue">end</span>
+          <span style="color: blue">end</span>
+
+          describe <span style="color:red">"#category"</span><span style="color:blue"> do </span>
+              it <span style="color:red">"returns the correct category"</span><span style="color: blue"> do</span>
+                @book.category.should eql :category
+              <span style="color: blue">end</span>
+          <span style="color: blue">end</span>
+
+          it <span style="color:red">"#accepts new books"</span><span style="color:blue"> do </span>
+            @book.add_book(Book.new("Designing for the Web", "Mark Boulton",:design))
+            @book.get_book("Designing for the Web").should be_an_instance_of Book
+          <span style="color: blue">end</span>
+      <span style="color: blue">end</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br>Some handy tricks for CLI :) <br>
+      * rspec spec_fileName.rb --format nested<br>
+      * rspec spec_fileName.rb --format documentation<br>
+      * mkdir spec<br>
+      * touch spec/book_spec.rb spec/library_spec.rb # creating two files without navigating into the spec directory<br>
+      * tree<br>
       </div>
       </p>
     </div>
