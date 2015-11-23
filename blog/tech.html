@@ -6,7 +6,7 @@
 </head>
 <body class="main-content">
   <div class="top-bar">
-    <span class="full-name">Fatma Ocal</span>
+    <!-- <span class="full-name">Fatma Ocal</span> -->
     <div class="right-nav">
       <span class="nav">
         <a href="http://f-ocal.github.io/index.html">Home</a> |
@@ -27,29 +27,87 @@
   </div>
 
   <div class="reflection">
-    <h2>This is the tech research that I did!!! </h2>
+    <h2 style="margin-top:100px">Ruby Testing Frameworks</h2>
+    <p>When you write code for an application or program, you can write test for the code. The test allows go beyond the verification and use the tests to improve the code's structure. Automated tests are great in a way that the program does what the developer thinks it does; however they are not great showing that what the developer thinks is what the program actually should do. Testing is a great way to catch errors in the development process when you write appropriate and concise tests. Ruby enables usages of the following testing frameworks in its standard library for setting up, organising, and running tests.
+    </p>
+    <span class="types">Test::Unit</span> Test::Unit is for unit testing framework for Ruby, based on xUnit principles.
+    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, i.e.
+    <table>
+      <tr>
+        <td style="width:90%">
+          <div class="code-block" style="height: 380px; width: 550px">
+      # File:  sum_number.rb
+
+      class SumNumber
+
+        def initialize(num)
+          raise unless num.is_a?(Numeric)
+          @x = num
+        end
+
+        def add(y)
+          @x + y
+        end
+
+        def multiply(y)
+          @x * y
+        end
+
+      end
+          </div>
+        </td>
+        <td style="width:90%">
+          <div class="code-block" style="height: 380px; width: 700px">
+      # File:  test_sum_number.rb
+
+      require_relative "sum_number"
+      require "test/unit"
+
+      class TestSumNumber < Test::Unit::TestCase
+
+        def test_simple
+          assert_equal(4, SumNumber.new(2).add(2) )
+          assert_equal(4, SumNumber.new(2).multiply(2) )
+        end
+
+        def test_failure
+          assert_equal(3, SumNumber.new(2).add(2), "Adding doesn't work" )
+        end
+
+      end
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="code-install">
+      >> ruby test_sum_number.rb<br>
+      Loaded suite test_sum_number<br>
+      Finished in 0.038617 seconds.<br>
+      <br>
+      1) Failure:<br>
+      test_failure(TestSumNumber) [test_sum_number.rb:16]:<br>
+      Adding doesn't work. <3> expected, but was <4>.<br>
+      2 tests, 3 assertions, 1 failures, 0 errors
+    </div>
+    </p>
+  <p>
+    <span class="types"><strong>Shoulda</strong></span style="font-size: 25px">Shoulda is added on to the Test::Unit framework, which is also for unit testing and it becomes available on attaching the <code>shoulda</code> gem.
+    </p>
+    <p>
+      <span class="types"><strong>MiniTest</strong></span style="font-size: 25px">MiniTest is also attached to the Test::Unit framework and it becomes available on attaching the <code>minitest reporters</code> gem.
+      </p>
+      <p>
+        <span class="types"><strong>Cucumber</strong></span style="font-size: 25px">Cucumber supports Behaviour- Drivn Development (BDD) , and enables using features and scenarios written in any language. It becomes available in project upon installing and activating the <code>cucumber</code> gem.
+        </p>
+        <p>
+          <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec
+          </p>
+        </div>
 
 
-</body>
-</html>
 
-<!-- There are a lot of interesting topics we haven't covered in Phase 0,
-but will be important for your success at DBC and beyond. Select a topic that interests you
-(or create one) and research it. We don't expect you to be experts in any of these, but try to get a
-high-level idea of what these things are and introduce them to your cohort. 
 
-Big O Complexity and Notation
-Computer Memory
-Dynamic vs. Static-typed Languages
-How computers work
-How the Internet Works
-Recursion
-Regular Expressions
-Sorting (merge sort, quick sort, bubble sort)
-Test-Driven Development
-What is Rails?
-Web Security
-SQL Injection (see Little Bobby Tables (Links to an external site.))
-NoSQL databases
-SQL query optimization
-Functional Programming -->
+
+
+      </body>
+      </html>
