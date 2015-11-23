@@ -31,7 +31,7 @@
     <p>When you write code for an application or program, you can write test for the code. The test allows go beyond the verification and use the tests to improve the code's structure. Automated tests are great in a way that the program does what the developer thinks it does; however they are not great showing that what the developer thinks is what the program actually should do. Testing is a great way to catch errors in the development process when you write appropriate and concise tests. Ruby enables usages of the following testing frameworks in its standard library for setting up, organising, and running tests.
     </p>
     <span class="types">Test::Unit</span> Test::Unit is for unit testing framework for Ruby, based on xUnit principles.
-    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, let's look at the following example.
+    To install, you need to type<span class="code-install">$ sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, let's look at the following example.
     <table>
       <tr>
         <td style="width:90%">
@@ -95,7 +95,7 @@
       <span class="types"><strong>Shoulda</strong></span style="font-size: 25px">Shoulda is added on to the Test::Unit framework, which is also for unit testing and it becomes available on attaching the <code>shoulda</code> gem.
       </p>
       <p>
-      <span class="types"><strong>MiniTest</strong></span style="font-size: 25px">MiniTest is also attached to the Test::Unit framework and it becomes available on attaching the <code>minitest reporters</code> gem.Minimal (mostly drop-in) replacement for test-unit. Minitest provides a complete suite of testing facilities supporting TDD(Test Driven Development), BDD(Behaviour-Driven Development), mocking and benchmarking. Some of the feautures are the followings: <br>
+      <span class="types"><strong>MiniTest</strong></span style="font-size: 25px">MiniTest is also attached to the Test::Unit framework and it becomes available on attaching the <code>minitest reporters</code> gem.Minimal (mostly drop-in) replacement for test-unit. MiniTest is very readable, small and incredibly fats unit testing framework and it provides a complete suite of testing facilities supporting TDD(Test Driven Development), BDD(Behaviour-Driven Development), mocking and benchmarking. Some of the feautures are the followings: <br>
       <span class="code-install">minitest/autorun-</span>the easy and explicit way to run all your tests.<br>
       <span class="code-install">minitest/unit-</span>a very fast, simple, and clean test system.<br>
       <span class="code-install">minitest/spec-</span>a very fast, simple, and clean spec system.<br>
@@ -105,7 +105,13 @@
       <span class="types"><strong>Cucumber</strong></span style="font-size: 25px">Cucumber supports Behaviour-Driven Development(BDD) , and enables using features and scenarios written in any language. It becomes available in project upon installing and activating the <code>cucumber</code> gem.
       </p>
       <p>
-      <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec
+      <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec is very popular and Behaviour-Driven Development testing framework for Ruby. RSpec stands for Ruby Spec. RSpec provides the structure for writing executable examples of how your code should behave means rspec describes your application's behaviour. To install rspec, type <span class="code-install"> $gem install rspec </span>
+      You can create project of files with extension of <code>.rb</code>.
+      <p>
+      Let's create <code>book.rb</code> file which is for writing our code and <code>book_spec.rb</code> to write our tests to test our code. With RSpec, we are always <em>describing</em> the behavior of classess, modules and their methods. The <span class="code-install">describe block</span> is always used at the top to put the spec in a concept. When RSpec uses <code>"describe"</code> word, so we can express concept like a conversation: <div class="code-install">"Describe an order".<br>"It sums the prices of its line items."<br></div>
+      </p>
+
+      </div>
       </p>
     </div>
   </body>
