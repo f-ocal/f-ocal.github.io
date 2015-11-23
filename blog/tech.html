@@ -31,29 +31,29 @@
     <p>When you write code for an application or program, you can write test for the code. The test allows go beyond the verification and use the tests to improve the code's structure. Automated tests are great in a way that the program does what the developer thinks it does; however they are not great showing that what the developer thinks is what the program actually should do. Testing is a great way to catch errors in the development process when you write appropriate and concise tests. Ruby enables usages of the following testing frameworks in its standard library for setting up, organising, and running tests.
     </p>
     <span class="types">Test::Unit</span> Test::Unit is for unit testing framework for Ruby, based on xUnit principles.
-    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, i.e.
+    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, let's look at the following example.
     <table>
       <tr>
         <td style="width:90%">
           <div class="code-block" style="height: 380px; width: 550px">
-      # File:  sum_number.rb
+        # File:  sum_number.rb
 
-      class SumNumber
+        class SumNumber
 
-        def initialize(num)
-          raise unless num.is_a?(Numeric)
-          @x = num
+          def initialize(num)
+            raise unless num.is_a?(Numeric)
+            @x = num
+          end
+
+          def add(y)
+            @x + y
+          end
+
+          def multiply(y)
+            @x * y
+          end
+
         end
-
-        def add(y)
-          @x + y
-        end
-
-        def multiply(y)
-          @x * y
-        end
-
-      end
           </div>
         </td>
         <td style="width:90%">
@@ -78,7 +78,7 @@
           </div>
         </td>
       </tr>
-    </table>
+    </table><br>
     <div class="code-install">
       >> ruby test_sum_number.rb<br>
       Loaded suite test_sum_number<br>
