@@ -31,83 +31,82 @@
     <p>When you write code for an application or program, you can write test for the code. The test allows go beyond the verification and use the tests to improve the code's structure. Automated tests are great in a way that the program does what the developer thinks it does; however they are not great showing that what the developer thinks is what the program actually should do. Testing is a great way to catch errors in the development process when you write appropriate and concise tests. Ruby enables usages of the following testing frameworks in its standard library for setting up, organising, and running tests.
     </p>
     <span class="types">Test::Unit</span> Test::Unit is for unit testing framework for Ruby, based on xUnit principles.
-    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, i.e.
+    To install, you need to type<span class="code-install">%sudo gem install test-unit</span> in the terminal. Test::Unit provides a rich set of assertions. You can think of an assertion as a statement for expected outcome, i.e. "I assert that x should be greater than y". Test::Unit provides a rich set of assertion, such as <span class="code-install">assert_equal(expected_value, actual_value, [message])</span>You can also include asserts into the method, let's look at the following example.
     <table>
       <tr>
         <td style="width:90%">
           <div class="code-block" style="height: 380px; width: 550px">
-      # File:  sum_number.rb
+            # File:  sum_number.rb
 
-      class SumNumber
+            class SumNumber
 
-        def initialize(num)
-          raise unless num.is_a?(Numeric)
-          @x = num
-        end
+            def initialize(num)
+              raise unless num.is_a?(Numeric)
+              @x = num
+            end
 
-        def add(y)
-          @x + y
-        end
+            def add(y)
+              @x + y
+            end
 
-        def multiply(y)
-          @x * y
-        end
+            def multiply(y)
+              @x * y
+            end
 
-      end
+            end
           </div>
         </td>
         <td style="width:90%">
           <div class="code-block" style="height: 380px; width: 700px">
-      # File:  test_sum_number.rb
+            # File:  test_unit_sum_number.rb
 
-      require_relative "sum_number"
-      require "test/unit"
+            require_relative "sum_number"
+            require "test/unit"
 
-      class TestSumNumber < Test::Unit::TestCase
+            class TestSumNumber < Test::Unit::TestCase
 
-        def test_simple
-          assert_equal(4, SumNumber.new(2).add(2) )
-          assert_equal(4, SumNumber.new(2).multiply(2) )
-        end
+            def test_simple
+              assert_equal(4, SumNumber.new(2).add(2) )
+              assert_equal(4, SumNumber.new(2).multiply(2) )
+            end
 
-        def test_failure
-          assert_equal(3, SumNumber.new(2).add(2), "Adding doesn't work" )
-        end
+            def test_failure
+              assert_equal(3, SumNumber.new(2).add(2), "Adding doesn't work" )
+            end
 
-      end
+            end
           </div>
         </td>
       </tr>
-    </table>
+    </table><br>
     <div class="code-install">
-      >> ruby test_sum_number.rb<br>
+      >> ruby test_unit_sum_number.rb<br>
       Loaded suite test_sum_number<br>
       Finished in 0.038617 seconds.<br>
       <br>
       1) Failure:<br>
-      test_failure(TestSumNumber) [test_sum_number.rb:16]:<br>
+      test_failure(TestSumNumber) [test_unit_sum_number.rb:16]:<br>
       Adding doesn't work. <3> expected, but was <4>.<br>
       2 tests, 3 assertions, 1 failures, 0 errors
     </div>
-    </p>
-  <p>
-    <span class="types"><strong>Shoulda</strong></span style="font-size: 25px">Shoulda is added on to the Test::Unit framework, which is also for unit testing and it becomes available on attaching the <code>shoulda</code> gem.
-    </p>
-    <p>
-      <span class="types"><strong>MiniTest</strong></span style="font-size: 25px">MiniTest is also attached to the Test::Unit framework and it becomes available on attaching the <code>minitest reporters</code> gem.
+      Assertions are gathered in tests, member functions for the test case whose names start with <strong><em>test_</em></strong>. When the test case is executed or required, Test::Unit will iterate through all of tests (finding all of the functions which start with test_ using reflection) in the test case, and provide the appropriate feedback. Further information reagrding assertions and methods can be found at <a href="http://ruby-doc.org/stdlib-1.8.7/libdoc/test/unit/rdoc/Test/Unit/Assertions.html">Test::Unit Assertion</a>
+      <p>
+
+      <span class="types"><strong>Shoulda</strong></span style="font-size: 25px">Shoulda is added on to the Test::Unit framework, which is also for unit testing and it becomes available on attaching the <code>shoulda</code> gem.
       </p>
       <p>
-        <span class="types"><strong>Cucumber</strong></span style="font-size: 25px">Cucumber supports Behaviour- Drivn Development (BDD) , and enables using features and scenarios written in any language. It becomes available in project upon installing and activating the <code>cucumber</code> gem.
-        </p>
-        <p>
-          <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec
-          </p>
-        </div>
-
-
-
-
-
-
-      </body>
-      </html>
+      <span class="types"><strong>MiniTest</strong></span style="font-size: 25px">MiniTest is also attached to the Test::Unit framework and it becomes available on attaching the <code>minitest reporters</code> gem.Minimal (mostly drop-in) replacement for test-unit. Minitest provides a complete suite of testing facilities supporting TDD(Test Driven Development), BDD(Behaviour-Driven Development), mocking and benchmarking. Some of the feautures are the followings: <br>
+      <span class="code-install">minitest/autorun-</span>the easy and explicit way to run all your tests.<br>
+      <span class="code-install">minitest/unit-</span>a very fast, simple, and clean test system.<br>
+      <span class="code-install">minitest/spec-</span>a very fast, simple, and clean spec system.<br>
+      <span class="code-install">minitest/mock-</span>a simple, clean mock/stub system.<br>
+      <span class="code-install">minitest/benchmark-</span>an awesome way to assert your algorithm's performance in a repeatable manner.<br>
+      <p>
+      <span class="types"><strong>Cucumber</strong></span style="font-size: 25px">Cucumber supports Behaviour-Driven Development(BDD) , and enables using features and scenarios written in any language. It becomes available in project upon installing and activating the <code>cucumber</code> gem.
+      </p>
+      <p>
+      <span class="types"><strong>Rspec</strong></span style="font-size: 25px">RSpec
+      </p>
+    </div>
+  </body>
+</html>
