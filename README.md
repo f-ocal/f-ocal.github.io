@@ -1,3 +1,3 @@
 Hello everyone,
 
-This is my website for Dev Bootcamp.
+This is my first personal website.
